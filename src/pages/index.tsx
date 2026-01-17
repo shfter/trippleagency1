@@ -1,20 +1,34 @@
 import { motion } from "framer-motion";
+import { ReactTyped } from "react-typed";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between">
-      <div className="absolute flex flex-col top-[17.5vh] left-[27vw] azeret-mono-l text-[0.8vw] opacity-[24%]">
-        <span className="">--- YOU SHOULD PUT LONG ASS TEXT HERE</span>
-        <span className="">--- BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BAL</span>
-        <span className="">--- YOU CAN PUT ANYTHING HERE</span>
-      </div>
-      <span className="absolute azeret-mono-l left-[2.5em] top-[2.5em] text-[1.15vw]">TRIPPLE AGENCY</span>
-      <span className="absolute azeret-mono-m right-[2.5em] top-[2.5em] text-[1.15vw]">{'40°43′N 74°01′W'}</span>
-      <div className="h-[30vh] w-[100%] flex flex-row justify-center items-center world reds text-[17.8vw] pt-[0.2em]">
+     <div className="gray1 whitespace-pre-wrap absolute flex flex-col top-[19.5vh] left-[23vw] azeret-mono-l text-[0.9vw] opacity-[24%]">
+  <ReactTyped
+    strings={[
+      `--- execution: founder_first\n--- non_delegated.thinking\n--- scalable.architecture\n--- outcomes: prioritized`,
+    ]}
+    typeSpeed={25}
+    backSpeed={10}
+    showCursor={true}
+    loop={true}
+  />
+</div>
+      <div className="mb_metaSticky">
+  <span className="mb_meta1 absolute azeret-mono-l left-[2.5em] top-[2.5em] text-[1.15vw] z-[20]">
+    TRIPPLE AGENCY
+  </span>
+
+  <span className="mb_meta2 absolute azeret-mono-m right-[2.5em] top-[2.5em] text-[1.15vw] z-[20]">
+    {'40°43′N 74°01′W'}
+  </span>
+</div>
+      <div className="mb_hg1 h-[30vh] w-[100%] flex flex-row justify-center items-center world reds text-[17.8vw] pt-[0.2em] z-[1]">
         WHEN YOU NEED
       </div>
-      <div className="h-[23vh] w-[100%] flex flex-row border-t-[1.2] border-b-[1.2] border-white">
-        <div className="text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+      <div className="mb_row h-[23vh] w-[100%] flex flex-row border-t-[1.2] border-b-[1.2] border-white">
+        <div className="mb_row_txt mb_bot_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
            <motion.img
       src="/item1.png"
       alt="icon 1"
@@ -27,10 +41,10 @@ export default function Home() {
       }}
     />
           <span className="flex justify-between items-center world">
-          <span className=" text-[1.42em] pt-[1em] roslindale">BD & FUNDRAISE</span>
+          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">BD & FUNDRAISE</span>
           </span>
         </div>
-        <div className="text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+        <div className="mb_row_txt mb_bot_br mb_no_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
                <motion.img
       src="/item2.png"
       alt="icon 1"
@@ -46,10 +60,10 @@ export default function Home() {
       }}
     />
           <span className="flex justify-between items-center world">
-          <span className=" text-[1.42em] pt-[1em] roslindale">GTM & ADVISORY</span>
+          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">GTM & ADVISORY</span>
           </span>
         </div>
-        <div className="text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+        <div className="mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
           <motion.img
   src="/item3.png"
   alt="icon 3"
@@ -72,10 +86,10 @@ export default function Home() {
   }}
 />
           <span className="flex justify-between items-center world">
-          <span className=" text-[1.42em] pt-[1em] roslindale">COMMUNITY & MARKETING</span>
+          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">COMMUNITY & MARKETING</span>
           </span>
         </div>
-        <div className="text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between">
+        <div className="mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between">
 <motion.img
   src="/item4.png"
   alt="icon 1"
@@ -91,38 +105,73 @@ export default function Home() {
   }}
 />
           <span className="flex justify-between items-center world">
-          <span className=" text-[1.42em] pt-[1em] roslindale">DEVELOPMENT</span>
+          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">DEVELOPMENT</span>
           </span>
         </div>
       </div>
-      <div className="h-[44vh] w-[100%] flex flex-row">
-      <div className="h-[100%] w-[25%] border-r-[1.2] border-white p-[2em] flex items-end relative">
-        <div className="absolute flex flex-col top-[2.5em] azeret-mono-l text-[0.8vw] opacity-[24%]">
-              <span>{'THIS IS CUSTOM TEXT --->'}</span>
-              <span className="ml-[2em]">/// YOU CAN PUT ANYTHING HERE</span>
-              <span className="ml-[4em]">/// CLIENT WON'T NOTICE ANYWAYS</span>
-        </div>
-        <span className="text-[3.1vh] pt-[1em] roslindale">WE BUILT AND WORKED WITH MANY AGENCIES</span>
+      <div className="row_main h-[44vh] w-[100%] flex flex-row">
+      <div className=" mb_flex_start mb_full_w mb_h_auto h-[100%] w-[25%] border-r-[1.2] border-white p-[2em] flex items-end relative mb_hdn">
+        <div className="gray1 absolute flex flex-col top-[2.5em] azeret-mono-l text-[1vw] opacity-[24%]">
+  <ReactTyped
+    strings={[
+      `// FUN FACT: MOST WEB3 AGENCIES PERFORM THEIR MARKET RESEARCH BASED ON WEB2 MODELS. AND THEN CHARGE YOU LIKE THEY'RE NASA SCIENTISTS.`,
+    ]}
+    typeSpeed={40}
+    backSpeed={0}
+    showCursor={false}
+    loop={true}
+  />
+</div>
+        <span className="whitespace-pre-wrap mb_28 text-[1.7vw] pt-[1em] roslindale leading-[1.6] flex flex-col gap-[0.7em] ">
+  <ReactTyped
+  strings={[`WE BUILT.\nWE HIRED AGENCIES.`]}
+  typeSpeed={67}
+  startDelay={0}      // no delay
+  backSpeed={0}
+  showCursor={false}
+/>
+  <ReactTyped
+  strings={[`WE WATCHED BUDGETS BURN.`]}
+  typeSpeed={67}
+  startDelay={2400}
+  backSpeed={0}
+  showCursor={false}
+/>
+</span>
       </div>
-      <div className="h-[100%] w-[50%] flex flex-col border-r-[1.2] border-white justify-end">
-        <div className="w-[100%] h-[76%] relative text-[2vh]">
-          <span className="world reds text-[10.7em] absolute left-1/2 -translate-x-1/2 top-[-0.13em] z-[1]">FOUNDERS</span>
-          <span className="gradient-text shadow-text classicaone text-[4.7em] absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-0.8em] z-[2]">Not freelancers</span>
+      <div className="mb_full_w h-[100%] w-[50%] flex flex-col border-r-[1.2] border-white justify-end">
+        <div className="mb_main_h w-[100%] h-[76%] relative text-[2vh]">
+          <span className="mb_pad2 mb_main1 world reds text-[12.7vw] absolute left-1/2 -translate-x-1/2 top-[-0.13em] z-[1]">FOUNDERS</span>
+          <span className="mb_main2 gradient-text shadow-text classicaone text-[4.8em] absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-0.8em] z-[2]">Not freelancers</span>
         </div>
-        <div className="text-[2vh] w-[100%] h-[24%] border-t-[1.2] border-white flex flex-row justify-between items-center pl-[3em] pr-[3em]">
-                  <img src="/arrowl.png" alt="arrow-l" className=""/>
-                  <span className="text-[3.1vh]  roslindale">CONTACT US</span>
-                  <img src="/arrowr.png" alt="arrow-r" className=""/>
+        <div className="mb_bot_br text-[2vh] w-[100%] h-[24%] border-t-[1.2] border-white flex flex-row justify-between items-center pl-[3em] pr-[3em]">
+                  <img src="/arrowl.png" alt="arrow-l" className="mb_arrow"/>
+                  <span className="mb_arrws_txt text-[1.9vw]  roslindale">CONTACT US</span>
+                  <img src="/arrowr.png" alt="arrow-r" className="mb_arrow"/>
         </div>
       </div>
-       <div className="h-[100%] w-[25%] border-white p-[2em] flex relative">
-           <span className="text-[3.1vh] roslindale">PAID 5 FIGURES TO PROGREV GOEV</span>
-            <div className="absolute flex flex-row bottom-[2.5em] azeret-mono-l text-[0.8vw] opacity-[24%] left-[0]">
-              <span className="ml-[2em]">{">BUY $ORNG - EMBRACE THE CHANGE"}</span>
+       <div className=" mb_h_auto mb_bot_br mb_full_w h-[100%] w-[25%] border-white p-[2em] flex relative mb_hdn">
+           <span className="mb_28 text-[1.7vw] roslindale">
+  <ReactTyped
+    strings={[`SO YOU WON'T HAVE TO...`]}
+    typeSpeed={67}
+    startDelay={5300}   // starts after previous two lines
+    backSpeed={0}
+    showCursor={false}
+  />
+</span>
+            <div className="gray3 whitespace-pre-wrap absolute flex flex-row bottom-[2.5em] azeret-mono-l text-[1vw] opacity-[24%] left-[2em]">
+              <ReactTyped
+  strings={[
+    `// OUR CLIENTS: \n>>> GGSOL\n>>> FRIENDO.CASH\n>>> SAFEBLOCK\n>>> HACKEN\n>>> SKALE\n>>> { YOU? }`,
+  ]}
+  typeSpeed={40}
+  startDelay={7500}
+  showCursor={true}
+/>
           </div>
        </div>
       </div>
-      
      <div className="ticker-wrapper">
   <div className="ticker-track">
     {/* 1st copy */}
