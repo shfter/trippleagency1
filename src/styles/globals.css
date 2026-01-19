@@ -153,6 +153,10 @@ body {
     flex-wrap: wrap;
     height: auto !important;
   }
+  .br1{
+    border-right: none !important;
+    border-bottom: 2px solid #830003;
+  }
 
   .mb_row > * {
     flex: 0 0 50%;
@@ -219,6 +223,35 @@ body {
   .mb_pad2{
     padding-top: 2vh;
   }
+  .mb_overlay_container{
+    width: 95% !important;
+    height: 100vh !important; 
+    flex-direction: column !important;
+  }
+  .mb_overlay_half{
+    width: 100% !important;
+    justify-content: center !important;
+  } 
+  .mb_overlay_title{
+    font-size: 5vh;
+  } 
+  .mb_overlay-desc{
+    font-size: 2vh !important
+  }
+
+  .mb_overlay_btn{
+    font-size: 2vh !important;
+    padding: 1.5vh 3vh !important;
+    width: 100%;
+    margin-top: 2vh;
+  } 
+
+  .cross{
+    width: 6vh !important; 
+    height: 6vh !important;
+  } 
+
+
   .mb_metaSticky{
   position: sticky;
   top: 0;          /* stick point */
@@ -265,6 +298,7 @@ body {
   align-items: flex-end !important;
   text-align: end !important;
 }
+
 }
 
 /* Animation: slide the whole strip from right to left */
@@ -285,6 +319,10 @@ body {
   width: 20% !important;
 }
 
+.hoverable:hover{
+  cursor: pointer;
+} 
+
 .hoverable_contact_us {
   transition: padding 0.2s ease;
 }
@@ -294,3 +332,98 @@ body {
   padding-right: 5em !important;
   cursor: pointer;
 } 
+
+.br1{
+  border-right: 2px solid #830003;
+} 
+
+.bf2{
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.contact_handler{
+  color: #969696; 
+}
+
+.contact_handler:hover{
+  color: #e2dcdc; 
+}
+
+.focus_handler {
+  transition: 
+    border-color 0.1s ease,
+    color 0.1s ease;
+}
+
+.focus_handler:hover {
+  cursor:pointer !important; 
+  border-color: #830003;
+  color: #ffffff;
+}
+
+.focus_handler_2:hover{
+  cursor:pointer !important; 
+  background-color: #830003;
+  font-weight: 600;
+} 
+
+.focus_handler_2 {
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    font-weight 0.15s ease;
+}
+
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid white;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 18px solid white;
+}
+
+.cross{
+  color: #969696; 
+} 
+
+.cross:hover{
+  color:white;
+} 
+
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.2em) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mb_overlay_animate_in {
+  animation: overlayIn 220ms ease-out both;
+}
+
+.mb_panel_animate_in {
+  animation: modalIn 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}

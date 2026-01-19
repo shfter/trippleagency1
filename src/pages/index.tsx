@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ReactTyped } from "react-typed";
 import { Analytics } from '@vercel/analytics/next';
+import { ChevronUp, ChevronDown } from 'lucide-react';
+import { X } from 'lucide-react';
+
 
 const FALLBACK = '40°43′N 74°01′W';
 
@@ -38,31 +41,17 @@ export function ViewportHeightFix() {
 }
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   const [coords, setCoords] = useState<string>(FALLBACK);
-     useEffect(() => {
-    if (!navigator.geolocation) return;
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
 
-        if (latitude == null || longitude == null) return;
+  const openTelegramChat = () => {
+  window.open("https://t.me/izziquant", "_blank", "noopener,noreferrer");
+};
 
-        const lat = toDMS(latitude, true);
-        const lon = toDMS(longitude, false);
-
-        setCoords(`${lat} ${lon}`);
-      },
-      () => {
-        // Permission denied or error → keep fallback
-        setCoords(FALLBACK);
-      },
-      {
-        enableHighAccuracy: false,
-        timeout: 5000,
-      }
-    );
-  }, []);
+const openCalendly = () => {
+  window.open("https://calendly.com/izziquant/30min", "_blank", "noopener,noreferrer");
+};
 
 
   return (
@@ -88,11 +77,11 @@ export default function Home() {
 
   </span>
 </div>
-      <div className="mb_hg1 h-[30vh] w-[100%] flex flex-row justify-center items-center world reds text-[17.8vw] pt-[0.2em] z-[1]">
+      <div className="pointer-events-none mb_hg1 h-[30vh] w-[100%] flex flex-row justify-center items-center world reds text-[17.8vw] pt-[0.2em] z-[1]">
         WHEN YOU NEED
       </div>
       <div className="mb_row h-[23vh] w-[100%] flex flex-row border-t-[1.2] border-b-[1.2] border-white">
-        <div className="mb_reverse_right mb_row_txt mb_bot_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+        <div onClick={()=>{setOpen(true)}} className="pointer-events-auto focus_handler_2 mb_reverse_right mb_row_txt mb_bot_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
            <motion.img
       src="/item1.png"
       alt="icon 1"
@@ -105,10 +94,10 @@ export default function Home() {
       }}
     />
           <span className="flex justify-between items-center world">
-          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">BD & FUNDRAISE</span>
+          <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale ">BD & FUNDRAISE</span>
           </span>
         </div>
-        <div className="mb_row_txt mb_bot_br mb_no_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+        <div onClick={()=>{setOpen(true)}} className="pointer-events-auto focus_handler_2 mb_row_txt mb_bot_br mb_no_br text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
                <motion.img
       src="/item2.png"
       alt="icon 1"
@@ -127,7 +116,7 @@ export default function Home() {
           <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">GTM & ADVISORY</span>
           </span>
         </div>
-        <div className="mb_reverse_right mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
+        <div onClick={()=>{setOpen(true)}} className="pointer-events-auto focus_handler_2 mb_reverse_right mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between border-r-[1.2] border-white">
           <motion.img
   src="/item3.png"
   alt="icon 3"
@@ -153,7 +142,7 @@ export default function Home() {
           <span className="mb_row_txt text-[1.42vw] pt-[1em] roslindale">COMMUNITY & MARKETING</span>
           </span>
         </div>
-        <div className="mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between">
+        <div onClick={()=>{setOpen(true)}} className="pointer-events-auto focus_handler_2 mb_row_txt text-[1.6vh] h-[100%] w-[25%] flex flex-col p-[2.3em] justify-between">
 <motion.img
   src="/item4.png"
   alt="icon 1"
@@ -175,7 +164,7 @@ export default function Home() {
       </div>
       <div className="row_main h-[44vh] w-[100%] flex flex-row">
       <div className=" mb_flex_start mb_full_w mb_h_auto h-[100%] w-[25%] border-r-[1.2] border-white p-[2em] flex items-end relative mb_hdn">
-        <div className="gray1 absolute flex flex-col top-[2.5em] azeret-mono-l text-[1vw] opacity-[24%]">
+        <div onClick={()=>{setOpen(true)}} className="gray1 absolute flex flex-col top-[2.5em] azeret-mono-l text-[1vw] opacity-[24%]">
   <ReactTyped
     strings={[
       `// FUN FACT: MOST WEB3 AGENCIES PERFORM THEIR MARKET RESEARCH BASED ON WEB2 MODELS. AND THEN CHARGE YOU LIKE NASA SCIENTISTS.`,
@@ -208,7 +197,7 @@ export default function Home() {
           <span className="pointer-events-none mb_pad2 mb_main1 world reds text-[12.7vw] absolute left-1/2 -translate-x-1/2 top-[-0.13em] z-[1]">FOUNDERS</span>
           <span className="pointer-events-none mb_main2 gradient-text shadow-text classicaone text-[4.8em] absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-0.8em] z-[2]">Not freelancers</span>
         </div>
-        <div className="hoverable_contact_us pointer-events-auto mb_bot_br text-[2vh] w-[100%] h-[24%] border-t-[1.2] border-white flex flex-row justify-between items-center pl-[3em] pr-[3em]">
+        <div onClick={()=>{setOpen(true)}} className="hoverable_contact_us pointer-events-auto mb_bot_br text-[2vh] w-[100%] h-[24%] border-t-[1.2] border-white flex flex-row justify-between items-center pl-[3em] pr-[3em]">
                   <img src="/arrowl.png" alt="arrow-l" className="mb_arrow"/>
                   <span className="mb_arrws_txt text-[1.9vw]  roslindale">CONTACT <span className="ml-[0.5vw]">US</span></span>
                   <img src="/arrowr.png" alt="arrow-r" className="mb_arrow"/>
@@ -239,30 +228,26 @@ export default function Home() {
      <div className="ticker-wrapper">
   <div className="ticker-track">
     {/* 1st copy */}
-    <div className="ticker-item">
+        <div className="ticker-item">
       <span>WEB 3 CONSULTANCY</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>BUSINESS DEVELOPMENT</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>OUTREACH | PARTNERSHIPS</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>MARKETING</span>
       <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
-      <span className="dot"></span>
-      <span>TOKENOMICS</span>
-      <span className="dot"></span>
-      <span>GTM FOR FOUNDERS</span>
+      <span>REWARD CAMPAIGN DESIGN</span>
       <span>{">>>"}</span>
-      <span>WEB 3 CONSULTANCY</span>
+      <span>KOLs MANAGEMENT</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
-      <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>SOFTWARE DEVELOPMENT</span>
       <span className="dot"></span>
       <span>TOKENOMICS</span>
       <span className="dot"></span>
       <span>GTM FOR FOUNDERS</span>
+      <span className="dot"></span>
+      <span>ADVISORY</span>
       <span className="dot"></span>
     </div>
 
@@ -270,75 +255,124 @@ export default function Home() {
     <div className="ticker-item">
       <span>WEB 3 CONSULTANCY</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>BUSINESS DEVELOPMENT</span>
       <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>OUTREACH | PARTNERSHIPS</span>
       <span className="dot"></span>
-      <span>TOKENOMICS</span>
+      <span>MARKETING</span>
       <span className="dot"></span>
-      <span>GTM FOR FOUNDERS</span>
+      <span>REWARD CAMPAIGN DESIGN</span>
       <span>{">>>"}</span>
-      <span>WEB 3 CONSULTANCY</span>
+      <span>KOLs MANAGEMENT</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
-      <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>SOFTWARE DEVELOPMENT</span>
       <span className="dot"></span>
       <span>TOKENOMICS</span>
       <span className="dot"></span>
       <span>GTM FOR FOUNDERS</span>
-            <span className="dot"></span>
+      <span className="dot"></span>
+      <span>ADVISORY</span>
+      <span className="dot"></span>
     </div>
 
     {/* 3rd copy */}
-    <div className="ticker-item">
+        <div className="ticker-item">
       <span>WEB 3 CONSULTANCY</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>BUSINESS DEVELOPMENT</span>
       <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>OUTREACH | PARTNERSHIPS</span>
       <span className="dot"></span>
-      <span>TOKENOMICS</span>
+      <span>MARKETING</span>
       <span className="dot"></span>
-      <span>GTM FOR FOUNDERS</span>
+      <span>REWARD CAMPAIGN DESIGN</span>
       <span>{">>>"}</span>
-      <span>WEB 3 CONSULTANCY</span>
+      <span>KOLs MANAGEMENT</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
-      <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>SOFTWARE DEVELOPMENT</span>
       <span className="dot"></span>
       <span>TOKENOMICS</span>
       <span className="dot"></span>
       <span>GTM FOR FOUNDERS</span>
-            <span className="dot"></span>
+      <span className="dot"></span>
+      <span>ADVISORY</span>
+      <span className="dot"></span>
     </div>
 
     {/* 4th copy */}
-    <div className="ticker-item">
+        <div className="ticker-item">
       <span>WEB 3 CONSULTANCY</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
+      <span>BUSINESS DEVELOPMENT</span>
       <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>OUTREACH | PARTNERSHIPS</span>
       <span className="dot"></span>
-      <span>TOKENOMICS</span>
+      <span>MARKETING</span>
       <span className="dot"></span>
-      <span>GTM FOR FOUNDERS</span>
+      <span>REWARD CAMPAIGN DESIGN</span>
       <span>{">>>"}</span>
-      <span>WEB 3 CONSULTANCY</span>
+      <span>KOLs MANAGEMENT</span>
       <span className="dot"></span>
-      <span>PRODUCT STRATEGY</span>
-      <span className="dot"></span>
-      <span>AI - POWERED OUTREACH</span>
+      <span>SOFTWARE DEVELOPMENT</span>
       <span className="dot"></span>
       <span>TOKENOMICS</span>
       <span className="dot"></span>
       <span>GTM FOR FOUNDERS</span>
-            <span className="dot"></span>
+      <span className="dot"></span>
+      <span>ADVISORY</span>
+      <span className="dot"></span>
     </div>
   </div>
 </div>
+ {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="
+            fixed inset-0 z-[999]
+            bg-black/60
+            backdrop-blur-sm flex items-center justify-center mb_overlay_animate_in
+          ">
+          
+          <div className="w-[80vw] h-[34vh] flex flex-row mb_overlay_container">
+            <div onClick={()=>{openTelegramChat()}} className="hoverable mb_overlay_half h-[100%] w-[50%] br1 flex flex-col justify-between p-[0.5vw] pr-[2vw] contact_handler" style={{alignItems:'end', textAlign:'end'}}>
+              <span className="world text-[4vw] mb_overlay_title">SEND A MESSAGE</span>
+              <div className="azeret-mono-l text-[1vw] whitespace-pre-wrap mb_overlay-desc">
+                <ReactTyped
+                  strings={[
+                    `DO YOU WANT TO LEARN MORE ABOUT US, ASK A SPECIFIC QUESTION, OR SIMPLY PREFER TEXT-BASED COMMUNICATION?\nDROP US A MESSAGE - WE AIM TO ANSWER WITHIN AN HOUR AND ARE ALWAYS HAPPY TO CHAT.`,
+                  ]}
+                typeSpeed={0.05}
+                backSpeed={0}
+                showCursor={false}
+                loop={false}
+                />
+                </div>
+            <button className="mb_overlay_btn bf2 p-[1em] bg-[#181414] text-[1.1vw] focus_handler">
+              MESSAGE ON TELEGRAM
+            </button>
+            </div>
+            <div onClick={()=>{openCalendly()}} className="hoverable mb_overlay_half h-[100%] w-[50%] flex flex-col justify-between p-[0.5vw] pl-[2vw] whitespace-pre-wrap contact_handler">
+              <span className="mb_overlay_title world text-[4vw]">BOOK A CALL</span>
+              <div className="azeret-mono-l text-[1vw] mb_overlay-desc">
+                            <ReactTyped
+                  strings={[
+                    `READY TO TALK THROUGH YOUR IDEA, GET CLARITY ON YOUR PROJECT, OR DISCUSS HOW WE CAN HELP?\nBOOK A CALL WITH OUR REPRESENTATIVES - WE’LL LISTEN, SHARE INSIGHTS, AND SUGGEST THE BEST NEXT STEPS.`,
+                  ]}
+                typeSpeed={0.05}
+                backSpeed={0}
+                showCursor={false}
+                loop={false}
+                />
+              </div>
+              <button className="mb_overlay_btn bf2 p-[1em] bg-[#181414] w-fit text-[1.1vw focus_handler text-[1.1vw]">
+              BOOK WITH CALENDLY
+            </button>
+            </div>
+
+          </div>
+          <X className="absolute w-[4vw] h-[4vw] top-[2vh] right-[2vw] hoverable cross"/>
+        </div>
+      )}
 <ViewportHeightFix/>
     </main>
   );
